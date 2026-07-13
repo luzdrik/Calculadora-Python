@@ -1,5 +1,7 @@
 ##      Projeto 1 - Calculadora    (22/06/2026)     ##
+
 import operations
+import inputs
 
 programa = True
 print("\n==================================\n" \
@@ -25,62 +27,55 @@ while programa:
         print("Digite um número válido.")
         continue
     
-
     if opcao == 0:
         print("\nAté a próxima! :)")
         programa = False
 
     elif opcao == 1:
         print("\n=== OPERAÇÃO: ADIÇÃO ===")
-        num1 = int(input("* Informe o primeiro número: "))
-        num2 = int(input("* Informe o segundo número: "))
+        num1, num2 = inputs.ler2()
         resultado = operations.soma(num1,num2)
         print("Resultado: ", resultado)
 
     elif opcao == 2:
         print("\n=== OPERAÇÃO: SUBTRAÇÃO ===")
-        num1 = int(input("* Informe o primeiro número: "))
-        num2 = int(input("* Informe o segundo número: "))
+        num1, num2 = inputs.ler2()
         resultado = operations.subtracao(num1,num2)
         print("Resultado: ", resultado)
 
     elif opcao == 3:
         print("\n=== OPERAÇÃO: MULTIPLICAÇÃO ===")
-        num1 = int(input("* Informe o primeiro número: "))
-        num2 = int(input("* Informe o segundo número: "))
+        num1, num2 = inputs.ler2()
         resultado = operations.multiplicacao(num1,num2)
         print("Resultado: ", resultado)
 
     elif opcao == 4:
         print("\n=== OPERAÇÃO: DIVISÃO ===")
-        num1 = int(input("* Informe o primeiro número: "))
-        num2 = int(input("* Informe o segundo número: "))
+        num1, num2 = inputs.ler2()
         resultado = operations.divisao(num1,num2)
         print("Resultado: ", resultado)
 
     elif opcao == 5:
         print("\n=== OPERAÇÃO: POTENCIAÇÃO ===")
-        num1 = int(input("* Informe o primeiro número: "))
-        num2 = int(input("* Informe o segundo número: "))
+        num1, num2 = inputs.ler2()
         resultado = operations.potenciacao(num1,num2)
         print("Resultado: ", resultado)
 
     elif opcao == 6:
         print("\n=== OPERAÇÃO: RADICIAÇÃO ===")
+        num1 = input.ler1()
 
         resultado = operations.radiciacao(num1)
         print("Resultado: ", round(resultado, 2))
 
     elif opcao == 7:
         print("\n=== OPERAÇÃO: DIVISÃO INTEIRA ===")
-        num1 = int(input("* Informe o primeiro número: "))
-        num2 = int(input("* Informe o segundo número: "))
+        num1, num2 = inputs.ler2()
         resultado = operations.divisao_inteira(num1,num2)
         print("Resultado: ", resultado)
 
     elif opcao == 8:
         print("\n=== OPERAÇÃO: RESTO DA DIVISÃO ===")
-        num1 = int(input("* Informe o primeiro número: "))
-        num2 = int(input("* Informe o segundo número: "))
+        num1, num2 = inputs.ler2()
         resultado = operations.divisao_resto(num1,num2)
         print("Resultado: ", resultado)
