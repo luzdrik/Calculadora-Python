@@ -1,0 +1,7 @@
+# Arquivos compilados do Python
+__pycache__/
+operations.cpython-313.pyc
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
