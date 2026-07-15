@@ -1,4 +1,5 @@
 import tkinter as tk
+import operations as op
 
 # Criação da janela
 janela = tk.Tk()
@@ -23,13 +24,25 @@ visor.grid(
     columnspan=4
 )
 
-# Criando um vetor na ordem de aparição de um teclado
+# Criando um vetor na ordem dos botões do teclado de uma calculadora
 botoes = [
     "7", "8", "9", "/",
     "4", "5", "6", "*",
     "1", "2", "3", "-",
     "0", "C", "=", "+"
 ]
+
+operacoes = {
+    "+": op.soma,
+    "-": op.subtracao,
+    "*": op.multiplicacao,
+    "/": op.divisao
+}
+
+# Criando variáveis globais
+num1 = None
+num2 = None
+operador = None
 
 # Criando funções
 def limpar():
@@ -42,16 +55,29 @@ def clicar_numero(valor):
         
     visor.insert(tk.END, valor)
 
-# Dicionário da ação limpar
+def calcular():
+    
+    pass
+
+# Dicionário de ações da interface
 acoes = {
-    "C": limpar
+    "C": limpar,
+    "=": calcular
 }
 
 def clique(valor):
     if valor in acoes:
         acoes[valor]()
+
+    elif valor in operacoes:
+        num1 = int(visor.get())
+        operador = valor
+
+        visor.delete(0, tk.END)
+
     else:
         clicar_numero(valor)
+
 
 """acoes = {
     "C": limpar,
